@@ -44,6 +44,7 @@ src/
 │       ├── application-prod.yml        # Production environment config
 │       └── application-test.properties # Test environment config
 └── test/                               # Unit and integration tests
+```
 
 ---
 
