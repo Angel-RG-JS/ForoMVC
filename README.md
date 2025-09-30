@@ -48,17 +48,18 @@ src/
 ---
 
 ## Español
-El ForoMVC Alura es una aplicación web construida con el patrón Modelo-Vista-Controlador (MVC) usando Spring Boot y Maven. Es la respuesta a un reto de desarrollo de backend propuesto por la plataforma Alura de un foro para interacción social.
+
+El ForoMVC Alura es una aplicación web construida con el patrón Modelo-Vista-Controlador (MVC), utilizando Spring Boot y Maven. Fue desarrollada como respuesta a un reto de backend propuesto por la plataforma Alura, simulando un foro de interacción social con autenticación segura y lógica de dominio modular.
 
 ---
 
 ### 🛠️ Tecnologías Utilizadas
 
-- [MySql](https://www.mysql.com/)
-- [Java](https://www.java.com/en/)
-
-- [Spring Security](https://start.spring.io/)
-- [Token JWT](https://jwt.io/)
+- [MySql](https://www.mysql.com/) — Base de datos relacional  
+- [Java](https://www.java.com/en/) — Lenguaje principal  
+- [Spring Security](https://start.spring.io/) — Autenticación y autorización  
+- [Token JWT](https://jwt.io/) — Autenticación sin estado  
+- [Springdoc](https://springdoc.org/) — Generación de documentación API
 
 ---
 
@@ -68,23 +69,23 @@ El ForoMVC Alura es una aplicación web construida con el patrón Modelo-Vista-C
 src/
 ├── main/
 │   ├── java/com/foro_inicial/
-│   │   ├── controller/                 # Controladores web
-│   │   ├── infra/                      # Entidades JPA
+│   │   ├── controller/                 # Controladores REST
+│   │   ├── infra/                      # Capa de infraestructura
 │   │   │   ├── errores/                # Manejo de errores y excepciones
-│   │   │   ├── security/               # Seguridad manejada con BCrypt y JWT
-│   │   │   └── springdoc               # Documentación generada con Springdoc
+│   │   │   ├── security/               # Configuración de seguridad (BCrypt, JWT)
+│   │   │   └── springdoc/              # Configuración de documentación OpenAPI
 │   │   ├── modelo/                     # Lógica de negocio
-│   │   │   ├── curso/                  # Modelo del objeto curso
-│   │   │   ├── respuesta/              # Modelo de las respuestas del foro
-│   │   │   ├── topico/                 # Modelo de los temas a tratar
-│   │   │   │   └── validaciones/       # Establece los requisitos para subirc
-│   │   │   └── usuario/                # Establece credenciales y perfil de usuario
-│   │   └── repository/                 # Interfaces de acceso a datos
+│   │   │   ├── curso/                  # Entidad y lógica de cursos
+│   │   │   ├── respuesta/              # Modelo de respuestas del foro
+│   │   │   ├── topico/                 # Modelo de temas del foro
+│   │   │   │   └── validaciones/       # Reglas de validación para temas
+│   │   │   └── usuario/                # Credenciales y perfil de usuario
+│   │   └── repository/                 # Interfaces de acceso a datos (JPA)
 │   └── resources/
-│       ├── db.migration/               # Query sql para establecer DB
-│       ├── application.properties      # Configuración
+│       ├── db.migration/               # Scripts SQL para inicializar la base de datos
+│       ├── application.properties      # Configuración por defecto
 │       ├── application-prod.yml        # Configuración para producción
 │       └── application-test.properties # Configuración para pruebas
-└── test/                   # Pruebas unitarias
+└── test/                               # Pruebas unitarias e integración
 
 
