@@ -3,7 +3,7 @@ create table respuestas(
     id bigint not null auto_increment,
     mensaje text not null,
     topico_id bigint not null,
-    fecha_creacion datetime not null,
+    fecha_creacion timestamp default current_timestamp(),
     autor_id bigint not null,
     solucion tinyint default 0 not null,
     motivo_cancelamiento varchar(100) ,

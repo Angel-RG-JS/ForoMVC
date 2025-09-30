@@ -3,7 +3,7 @@ create table topicos(
     id bigint not null auto_increment,
     titulo varchar(100) not null,
     mensaje text not null,
-    fecha_creacion datetime not null,
+    fecha_creacion timestamp default current_timestamp(),
     status_topico varchar(100) not null,
     autor_id bigint not null,
     curso_id bigint not null,
